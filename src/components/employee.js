@@ -15,3 +15,7 @@ Components are encapsulate functionality and the logic. Theyre also able to have
 /*
 The employee function is a template for example a cookie cutter is not a cookie but it makes cookies.. each cookie may look a bit different, be a different type, or have sprinkles but its still a cookie. Props are used in params and the arg value will come from the parent component. in our example above the parent component is responsible for the state in which the data has to be displayed and props inside of the child component should not be changed. so we should be assigning values to props. dont try to modify props!
 */
+
+/*
+useState Hook - were not supposed to change the value of the props in the child instead we will change it in the parent and thats done by using state. State allows us to keep track of values but its a little different than a variable because the state can be tied to the UI so that when the state changes the UI will automatically update
+*/
