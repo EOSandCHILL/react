@@ -3,11 +3,10 @@ import Employee from "./components/employee";
 import { useState } from "react";
 
 function App() {
-  const [role /*variable*/, setRole /*function*/] =
-    useState("Software Engineer");
+  const [role /*variable*/, setRole /*function*/] = useState("Engineer");
   const showEmployees = true;
   return (
-    <div className="App bg-red-300">
+    <div className="App">
       {showEmployees ? (
         <>
           <input
@@ -17,9 +16,53 @@ function App() {
               setRole(e.target.value);
             }}
           />
-          <Employee name="Jenn" role={role} />
-          <Employee name="Garret" role={role} />
-          <Employee name="Jerry" role={role} />
+          <div className="flex flex-wrap justify-center">
+            <Employee
+              name="Jenn"
+              role="CTO"
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Garret"
+              role={role}
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Jerry"
+              role={role}
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Graham"
+              role="Marketing"
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Jaime"
+              role="Marketing"
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Nate"
+              role="Tech Sales"
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Mechelle"
+              role="Tech Sales"
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Cole"
+              role={role}
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+            <Employee
+              name="Mari"
+              role={role}
+              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
+            />
+          </div>
         </>
       ) : (
         <p>dont show the employees</p>
