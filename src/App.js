@@ -1,9 +1,65 @@
 import "./index.css";
-import Employee from "./components/employee";
+import Employee from "./components/Employee.js";
 import { useState } from "react";
 
 function App() {
   const [role /*variable*/, setRole /*function*/] = useState("Engineer");
+  const [employees, setEmployees] = useState([
+    {
+      id: 1,
+      name: "Jenn",
+      role: "CTO",
+      img: "https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg",
+    },
+    {
+      id: 2,
+      name: "Garret",
+      role: "Engineer",
+      img: "https://images.pexels.com/photos/2834009/pexels-photo-2834009.jpeg",
+    },
+    {
+      id: 3,
+      name: "Jerry",
+      role: "Engineer",
+      img: "https://images.pexels.com/photos/5083017/pexels-photo-5083017.jpeg",
+    },
+    {
+      id: 4,
+      name: "Graham",
+      role: "Marketing",
+      img: "https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg",
+    },
+    {
+      id: 5,
+      name: "Jaime",
+      role: "Marketing",
+      img: "https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg",
+    },
+    {
+      id: 6,
+      name: "Nate",
+      role: "Sales",
+      img: "https://images.pexels.com/photos/3789888/pexels-photo-3789888.jpeg",
+    },
+    {
+      id: 7,
+      name: "Mechelle",
+      role: "Sales",
+      img: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
+    },
+    {
+      id: 8,
+      name: "Coleman",
+      role: "Engineer",
+      img: "https://images.pexels.com/photos/3474629/pexels-photo-3474629.jpeg",
+    },
+    {
+      id: 9,
+      name: "Mari",
+      role: "Engineer",
+      img: "https://images.pexels.com/photos/3586798/pexels-photo-3586798.jpeg",
+    },
+  ]);
   const showEmployees = true;
   return (
     <div className="App">
@@ -17,51 +73,16 @@ function App() {
             }}
           />
           <div className="flex flex-wrap justify-center">
-            <Employee
-              name="Jenn"
-              role="CTO"
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Garret"
-              role={role}
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Jerry"
-              role={role}
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Graham"
-              role="Marketing"
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Jaime"
-              role="Marketing"
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Nate"
-              role="Tech Sales"
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Mechelle"
-              role="Tech Sales"
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Cole"
-              role={role}
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
-            <Employee
-              name="Mari"
-              role={role}
-              img="https://images.pexels.com/photos/1181256/pexels-photo-1181256.jpeg?cs=srgb&dl=pexels-christina-morillo-1181256.jpg&fm=jpg"
-            />
+            {employees.map((employee) => {
+              return (
+                <Employee
+                  key={employee.id}
+                  name={employee.name}
+                  role={employee.role}
+                  img={employee.img}
+                />
+              );
+            })}
           </div>
         </>
       ) : (
