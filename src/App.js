@@ -60,6 +60,16 @@ function App() {
       img: "https://images.pexels.com/photos/3586798/pexels-photo-3586798.jpeg",
     },
   ]);
+
+  function updateEmployee(id, newName, newRole) {
+    const updatedEmployees = employees.map((employee) => {
+      if (id == employee.id) {
+        return { ...employee, name: newName, role: newRole };
+      }
+      return employee;
+    });
+    setEmployees(updatedEmployees);
+  }
   const showEmployees = true;
   return (
     <div className="App">
@@ -77,9 +87,11 @@ function App() {
               return (
                 <Employee
                   key={employee.id}
+                  id={employee.id}
                   name={employee.name}
                   role={employee.role}
                   img={employee.img}
+                  updateEmployee={updateEmployee}
                 />
               );
             })}
