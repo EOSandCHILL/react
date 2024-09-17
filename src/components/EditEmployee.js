@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import { propTypes } from "react-bootstrap/esm/Image";
 import Modal from "react-bootstrap/Modal";
 
 function EditEmployee(props) {

@@ -6,7 +6,7 @@ import AddEmployee from "./components/AddEmployee";
 import EditEmployee from "./components/EditEmployee";
 import Header from "./components/Header";
 function App() {
-  const [role /*variable*/, setRole /*function*/] = useState("Engineer");
+  const [setRole /*function*/] = useState("Engineer");
   const [employees, setEmployees] = useState([
     {
       id: 1,
@@ -66,7 +66,7 @@ function App() {
 
   function updateEmployee(id, newName, newRole) {
     const updatedEmployees = employees.map((employee) => {
-      if (id == employee.id) {
+      if (id === employee.id) {
         return { ...employee, name: newName, role: newRole };
       }
       return employee;
